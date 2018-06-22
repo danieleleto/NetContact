@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PfS-Jz-zff">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--NetContact-->
+        <scene sceneID="7wd-CT-1sN">
+            <objects>
+                <viewController storyboardIdentifier="NetContactViewController" title="NetContact" id="ukA-VN-U8k" customClass="ViewController" customModule="NetContact" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Rvp-4i-4c1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="21J-Ww-6vF">
+                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem title="Filtri" image="filters" id="d8G-d5-t2Y"/>
+                                    <tabBarItem tag="1" title="Collaboratori" image="team" id="Dhd-Bc-Odu"/>
+                                    <tabBarItem tag="2" title="Clienti" image="customers" id="HLW-ap-gDL"/>
+                                    <tabBarItem tag="3" title="Tutti" image="filters_clear" id="JHv-pO-Rbr"/>
+                                    <tabBarItem tag="4" title="Profilo" image="profiles" id="fB9-Di-rhA"/>
+                                </items>
+                            </tabBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Al4-ry-x1j">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ContactCell" rowHeight="110" id="vQe-Zy-Sl6" customClass="ContactsTableViewCell" customModule="NetContact" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="110"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vQe-Zy-Sl6" id="T3Y-bf-miO">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="109.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Egy-Yx-mxz">
+                                                    <rect key="frame" x="78" y="10" width="196" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="NameLabel"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="phone_call" translatesAutoresizingMaskIntoConstraints="NO" id="o26-qk-vck">
+                                                    <rect key="frame" x="282" y="9" width="35" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="send_email" translatesAutoresizingMaskIntoConstraints="NO" id="G77-wM-5C4">
+                                                    <rect key="frame" x="325" y="10" width="35" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2m1-5m-RF5">
+                                                    <rect key="frame" x="78" y="39" width="25" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button" backgroundImage="rating_off"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLL-k5-VFL">
+                                                    <rect key="frame" x="111" y="39" width="25" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button" backgroundImage="rating_off"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="StM-cY-2Y3">
+                                                    <rect key="frame" x="144" y="39" width="25" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button" backgroundImage="rating_off"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvJ-Kl-Xtm">
+                                                    <rect key="frame" x="174" y="39" width="25" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button" backgroundImage="rating_off"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHe-c4-xho">
+                                                    <rect key="frame" x="10" y="10" width="60" height="60"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="buttonContactImageTouchDown:" destination="vQe-Zy-Sl6" eventType="touchDown" id="amU-yd-lB4"/>
+                                                        <segue destination="qXK-7f-mLR" kind="show" animates="NO" id="hwj-Ge-Zun"/>
+                                                    </connections>
+                                                </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="send_whatsapp" translatesAutoresizingMaskIntoConstraints="NO" id="ZU7-f7-A9I">
+                                                    <rect key="frame" x="325" y="52" width="35" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7yL-Ah-MIZ">
+                                                    <rect key="frame" x="78" y="70" width="196" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="send_sms" translatesAutoresizingMaskIntoConstraints="NO" id="D16-CG-45e">
+                                                    <rect key="frame" x="282" y="52" width="35" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="ContactCell"/>
+                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                        <connections>
+                                            <outlet property="buttonContactImage" destination="fHe-c4-xho" id="YZP-lE-rIo"/>
+                                            <outlet property="buttonRating1" destination="2m1-5m-RF5" id="Dfh-he-dJh"/>
+                                            <outlet property="buttonRating2" destination="CLL-k5-VFL" id="ieh-P9-Uis"/>
+                                            <outlet property="buttonRating3" destination="StM-cY-2Y3" id="n1b-Yi-mRt"/>
+                                            <outlet property="buttonRating4" destination="YvJ-Kl-Xtm" id="t5U-1i-WLW"/>
+                                            <outlet property="labelContatType" destination="7yL-Ah-MIZ" id="YJy-dg-aRu"/>
+                                            <outlet property="labelName" destination="Egy-Yx-mxz" id="EMP-RU-7mb"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ukA-VN-U8k" id="lr7-sB-VUK"/>
+                                    <outlet property="delegate" destination="ukA-VN-U8k" id="fsS-oE-B68"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="F5R-Ro-uxI"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="NetContact" id="wIe-u3-ww1"/>
+                    <connections>
+                        <outlet property="tabBar" destination="21J-Ww-6vF" id="V6i-Gc-VJc"/>
+                        <outlet property="tableViewContacts" destination="Al4-ry-x1j" id="iTp-UQ-U0B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CDM-MN-i4S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1410.4000000000001" y="-919.79010494752629"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="y94-4k-mVN">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qXK-7f-mLR" customClass="DetailViewController" customModule="NetContact" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qjz-3N-bak">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Yl-g1-Cxa">
+                                <rect key="frame" x="0.0" y="447" width="375" height="220"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <pickerView tag="2" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WgO-cV-BC4">
+                                        <rect key="frame" x="0.0" y="44" width="375" height="170"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </pickerView>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vqc-9F-kFQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <items>
+                                            <barButtonItem systemItem="cancel" id="Nfg-63-H2g">
+                                                <connections>
+                                                    <action selector="buttonPickerNumbersCancel:" destination="qXK-7f-mLR" id="thp-N9-VLD"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="8Sw-Wj-bQK"/>
+                                            <barButtonItem systemItem="done" id="Cwg-jm-wRJ">
+                                                <connections>
+                                                    <action selector="buttonPickerNumbersDone:" destination="qXK-7f-mLR" id="loR-z5-qhw"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </items>
+                                    </toolbar>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gEF-ZS-ptd">
+                                <rect key="frame" x="20" y="82" width="140" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNK-0u-Qeb">
+                                <rect key="frame" x="299" y="82" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="send_email"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hEV-qX-NbF">
+                                <rect key="frame" x="231" y="82" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="phone_call"/>
+                                <connections>
+                                    <action selector="buttonPhoneCallTouchDown:" destination="qXK-7f-mLR" eventType="touchDown" id="I7F-8C-0Yy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WxY-uL-DhK">
+                                <rect key="frame" x="231" y="150" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="send_sms"/>
+                                <connections>
+                                    <action selector="buttonSMSTouchDown:" destination="qXK-7f-mLR" eventType="touchDown" id="wPf-Qb-DVi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwV-aC-ajl">
+                                <rect key="frame" x="299" y="150" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="send_whatsapp"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5No-2p-T11">
+                                <rect key="frame" x="40" y="230" width="319" height="21"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NP7-Vo-XpT">
+                                <rect key="frame" x="23" y="262" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="rating_off"/>
+                                <connections>
+                                    <action selector="Rating1ButtonTouchDown:" destination="qXK-7f-mLR" eventType="touchDown" id="kc4-cj-GQz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nld-D4-2JP">
+                                <rect key="frame" x="56" y="262" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="rating_off"/>
+                                <connections>
+                                    <action selector="Rating2ButtonTouchDown:" destination="qXK-7f-mLR" eventType="touchDown" id="mJC-wj-G7j"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6MD-1K-AAL">
+                                <rect key="frame" x="89" y="262" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="rating_off"/>
+                                <connections>
+                                    <action selector="Rating3ButtonTouchDown:" destination="qXK-7f-mLR" eventType="touchDown" id="Jn7-av-U8e"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57g-Tf-pXV">
+                                <rect key="frame" x="122" y="262" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="rating_off"/>
+                                <connections>
+                                    <action selector="Rating4ButtonTouchDown:" destination="qXK-7f-mLR" eventType="touchDown" id="DBF-oT-y0S"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ANf-vV-Mdb">
+                                <rect key="frame" x="170" y="262" width="189" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="TypeButtonTouchDown:" destination="qXK-7f-mLR" eventType="touchDown" id="ZDx-Ks-k2Q"/>
+                                </connections>
+                            </button>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5CY-xb-pBK">
+                                <rect key="frame" x="0.0" y="447" width="375" height="220"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <pickerView tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eoG-UP-t6q">
+                                        <rect key="frame" x="0.0" y="32" width="375" height="188"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </pickerView>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tmZ-n9-Kbs">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <items>
+                                            <barButtonItem systemItem="cancel" id="VN0-A0-9Q2">
+                                                <connections>
+                                                    <action selector="buttonPickerTypeCancel:" destination="qXK-7f-mLR" id="Vqu-jF-x0O"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="bwy-Wq-uIJ"/>
+                                            <barButtonItem systemItem="done" id="aYw-oQ-UBk">
+                                                <connections>
+                                                    <action selector="buttonPickerTypeDone:" destination="qXK-7f-mLR" id="LWL-rJ-MJ8"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </items>
+                                    </toolbar>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="vSD-3a-D3x"/>
+                    </view>
+                    <connections>
+                        <outlet property="buttonEmail" destination="TNK-0u-Qeb" id="TVF-G6-oaW"/>
+                        <outlet property="buttonPhoneCall" destination="hEV-qX-NbF" id="0PT-oF-SlP"/>
+                        <outlet property="buttonRating1" destination="NP7-Vo-XpT" id="PML-D2-aqD"/>
+                        <outlet property="buttonRating2" destination="Nld-D4-2JP" id="ten-U5-4j3"/>
+                        <outlet property="buttonRating3" destination="6MD-1K-AAL" id="fIP-xN-7xc"/>
+                        <outlet property="buttonRating4" destination="57g-Tf-pXV" id="ptN-of-QZa"/>
+                        <outlet property="buttonSMS" destination="WxY-uL-DhK" id="Pl9-M3-Mr8"/>
+                        <outlet property="buttonType" destination="ANf-vV-Mdb" id="9t5-TC-1LU"/>
+                        <outlet property="buttonWhatsApp" destination="dwV-aC-ajl" id="5E9-m0-QTP"/>
+                        <outlet property="imageContact" destination="gEF-ZS-ptd" id="nIh-jm-jCm"/>
+                        <outlet property="labelName" destination="5No-2p-T11" id="qjf-cZ-6mS"/>
+                        <outlet property="pickerPhoneNumbers" destination="WgO-cV-BC4" id="UZM-xj-osf"/>
+                        <outlet property="pickerType" destination="eoG-UP-t6q" id="o7l-81-dCC"/>
+                        <outlet property="viewPickerPhoneNumbers" destination="1Yl-g1-Cxa" id="fXa-pT-yhk"/>
+                        <outlet property="viewPickerType" destination="5CY-xb-pBK" id="DRz-PH-nhy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fVN-FG-Tu4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2312.8000000000002" y="-920.68965517241384"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="npa-MY-ZmW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PfS-Jz-zff" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vKx-LN-w0q">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QFg-Vs-ipL">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="ukA-VN-U8k" kind="relationship" relationship="rootViewController" id="ZCR-BE-OKT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Md-nS-Pu9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="471.19999999999999" y="-919.79010494752629"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="customers" width="24" height="24"/>
+        <image name="filters" width="24" height="24"/>
+        <image name="filters_clear" width="24" height="24"/>
+        <image name="phone_call" width="25" height="25"/>
+        <image name="profiles" width="24" height="24"/>
+        <image name="rating_off" width="25" height="25"/>
+        <image name="send_email" width="25" height="25"/>
+        <image name="send_sms" width="25" height="25"/>
+        <image name="send_whatsapp" width="25" height="25"/>
+        <image name="team" width="24" height="24"/>
+    </resources>
+</document>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "DetailViewController.viewDidLoad():DetailViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "phoneNumber.label">
+            </PersistentString>
+            <PersistentString
+               value = "GContact">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in ViewController.viewDidLoad():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cells[1]">
+            </PersistentString>
+            <PersistentString
+               value = "contact.familyName">
+            </PersistentString>
+            <PersistentString
+               value = "cells.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.viewWillAppear(_:):ViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.ContactImageButtonTouchDown(_:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "sender.superview">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.tableView(_:numberOfRowsInSection:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cells.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DetailViewController.pickerView(_:numberOfRowsInComponent:):DetailViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "gPickerPhoneNumbers.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.tableView(_:cellForRowAt:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "indexPath.item">
+            </PersistentString>
+            <PersistentString
+               value = "cells[indexPath.row]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.viewDidAppear(_:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "gContacts">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "getUserData(_:_:):ClassDatabase.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "userData.value(forKey: &quot;default_phone&quot;)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
