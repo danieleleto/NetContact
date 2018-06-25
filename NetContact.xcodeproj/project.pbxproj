@@ -11,7 +11,6 @@
 		453043B420B7104C00FF2543 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453043B320B7104C00FF2543 /* ViewController.swift */; };
 		453043B720B7104C00FF2543 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 453043B520B7104C00FF2543 /* Main.storyboard */; };
 		453043B920B7104D00FF2543 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 453043B820B7104D00FF2543 /* Assets.xcassets */; };
-		453043BC20B7104D00FF2543 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 453043BA20B7104D00FF2543 /* LaunchScreen.storyboard */; };
 		453043C720B7104D00FF2543 /* NetContactTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453043C620B7104D00FF2543 /* NetContactTests.swift */; };
 		453043D220B7104E00FF2543 /* NetContactUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453043D120B7104E00FF2543 /* NetContactUITests.swift */; };
 		458C98D120C981CB00F5CF55 /* ExtensionImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458C98D020C981CB00F5CF55 /* ExtensionImage.swift */; };
@@ -22,6 +21,7 @@
 		45B9D0F520C02CBF00C86B15 /* ClassDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B9D0F420C02CBF00C86B15 /* ClassDatabase.swift */; };
 		45B9D0F720C15EB800C86B15 /* ClassCallAndMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B9D0F620C15EB800C86B15 /* ClassCallAndMessages.swift */; };
 		45B9D0F920C5462200C86B15 /* ExtensionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B9D0F820C5462200C86B15 /* ExtensionString.swift */; };
+		625EC8CD20DEB81E00DD39F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 625EC8CB20DEB81E00DD39F1 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +47,6 @@
 		453043B320B7104C00FF2543 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		453043B620B7104C00FF2543 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		453043B820B7104D00FF2543 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		453043BB20B7104D00FF2543 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		453043BD20B7104D00FF2543 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		453043C220B7104D00FF2543 /* NetContactTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetContactTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		453043C620B7104D00FF2543 /* NetContactTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetContactTests.swift; sourceTree = "<group>"; };
@@ -63,6 +62,7 @@
 		45B9D0F420C02CBF00C86B15 /* ClassDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDatabase.swift; sourceTree = "<group>"; };
 		45B9D0F620C15EB800C86B15 /* ClassCallAndMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassCallAndMessages.swift; sourceTree = "<group>"; };
 		45B9D0F820C5462200C86B15 /* ExtensionString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionString.swift; sourceTree = "<group>"; };
+		625EC8CC20DEB81E00DD39F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,9 +115,9 @@
 			children = (
 				453043B120B7104C00FF2543 /* AppDelegate.swift */,
 				453043B320B7104C00FF2543 /* ViewController.swift */,
+				625EC8CB20DEB81E00DD39F1 /* LaunchScreen.storyboard */,
 				453043B520B7104C00FF2543 /* Main.storyboard */,
 				453043B820B7104D00FF2543 /* Assets.xcassets */,
-				453043BA20B7104D00FF2543 /* LaunchScreen.storyboard */,
 				453043BD20B7104D00FF2543 /* Info.plist */,
 				45B9D0EB20BECFF000C86B15 /* DetailViewController.swift */,
 				45B9D0ED20BED0E500C86B15 /* ClassMyContact.swift */,
@@ -253,7 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				453043BC20B7104D00FF2543 /* LaunchScreen.storyboard in Resources */,
+				625EC8CD20DEB81E00DD39F1 /* LaunchScreen.storyboard in Resources */,
 				453043B920B7104D00FF2543 /* Assets.xcassets in Resources */,
 				453043B720B7104C00FF2543 /* Main.storyboard in Resources */,
 			);
@@ -333,10 +333,10 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		453043BA20B7104D00FF2543 /* LaunchScreen.storyboard */ = {
+		625EC8CB20DEB81E00DD39F1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				453043BB20B7104D00FF2543 /* Base */,
+				625EC8CC20DEB81E00DD39F1 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -398,7 +398,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos11.4;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -451,7 +451,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos11.4;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
@@ -462,15 +463,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QSHEBHJG3W;
+				DEVELOPMENT_TEAM = 69P5Z89PD9;
 				INFOPLIST_FILE = NetContact/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = aral.NetContact;
+				PRODUCT_BUNDLE_IDENTIFIER = aral.NetContact43;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -480,15 +485,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QSHEBHJG3W;
+				DEVELOPMENT_TEAM = 69P5Z89PD9;
 				INFOPLIST_FILE = NetContact/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = aral.NetContact;
+				PRODUCT_BUNDLE_IDENTIFIER = aral.NetContact43;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

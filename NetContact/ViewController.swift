@@ -10,23 +10,25 @@ import UIKit
 import Contacts
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITabBarDelegate {
-    
+
     @IBOutlet weak var tableViewContacts: UITableView!
     @IBOutlet weak var tabBar: UITabBar!
-    var contactList = CNContactStore()
     
+    var contactList = CNContactStore()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view, typically from a nib.
+
         self.tabBar.delegate = self
-        
         loadContacts()
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         tableViewContacts.reloadData()
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -78,23 +80,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
         tableViewContacts.reloadData()
     }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 110
     }
-    
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-        
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return gContactsForListView.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath) as! ContactsTableViewCell
         
-        cell.ContactIdx = indexPath.row
+        cell.Contact = gContactsForListView[indexPath.item]
         
         cell.labelName?.text = gContactsForListView[indexPath.item].contact.familyName + " " + gContactsForListView[indexPath.item].contact.givenName
         
@@ -127,7 +129,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 }
 
 class ContactsTableViewCell : UITableViewCell {
-    var ContactIdx = Int()
+    var Contact = MyContact()
     
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var buttonContactImage: UIButton!
@@ -136,7 +138,7 @@ class ContactsTableViewCell : UITableViewCell {
     @IBOutlet weak var buttonRating3: UIButton!
     @IBOutlet weak var buttonRating4: UIButton!
     @IBOutlet weak var labelContatType: UILabel!
-    
+
 /*    @IBAction func Rating1TouchDown(_ sender: UIButton) {
         SetRating(1)
     }
@@ -152,19 +154,18 @@ class ContactsTableViewCell : UITableViewCell {
     @IBAction func Rating4TouchDown(_ sender: UIButton) {
         SetRating(4)
     }*/
-    
+
     func setRating(_ rating: Int) {
         buttonRating1.setBackgroundImage(rating > 0 ? #imageLiteral(resourceName: "rating_on") : #imageLiteral(resourceName: "rating_off"), for: UIControlState.normal)
         buttonRating2.setBackgroundImage(rating > 1 ? #imageLiteral(resourceName: "rating_on") : #imageLiteral(resourceName: "rating_off"), for: UIControlState.normal)
         buttonRating3.setBackgroundImage(rating > 2 ? #imageLiteral(resourceName: "rating_on") : #imageLiteral(resourceName: "rating_off"), for: UIControlState.normal)
         buttonRating4.setBackgroundImage(rating > 3 ? #imageLiteral(resourceName: "rating_on") : #imageLiteral(resourceName: "rating_off"), for: UIControlState.normal)
-        
-//        Contact.Rating = rating
     }
-    
+
     @IBAction func buttonContactImageTouchDown(_ sender: UIButton) {
-        gContactIdx = ContactIdx
+        gContact = Contact
     }
+
 }
 
 class tabBarController: UITabBarController, UITabBarControllerDelegate {

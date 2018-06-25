@@ -9,11 +9,12 @@
 import Foundation
 import Contacts
 
-var gContactIdx = Int()
+var gContact = MyContact()
 var gContacts = [MyContact]()
 var gContactsForListView = [MyContact()]
 var gPickerPhoneNumbersTypeData = [String]()
 var gPickerPhoneNumbersData = [String]()
+var gPickerEmailsData = [String]()
 var gCurrentRow = IndexPath()
 
 let gPickerTypeData = ["N.D.", "Potenziale", "Presentazione", "Cliente", "Collaboratore"]
