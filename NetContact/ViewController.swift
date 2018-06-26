@@ -98,12 +98,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         cell.Contact = gContactsForListView[indexPath.item]
         
-        cell.labelName?.text = gContactsForListView[indexPath.item].contact.familyName + " " + gContactsForListView[indexPath.item].contact.givenName
+        cell.labelName.text = gContactsForListView[indexPath.item].contact.familyName + " " + gContactsForListView[indexPath.item].contact.givenName
         
         if (gContactsForListView[indexPath.item].contact.imageDataAvailable) {
-            cell.buttonContactImage?.layer.cornerRadius = 30
-            cell.buttonContactImage?.clipsToBounds = true
-            cell.buttonContactImage?.setBackgroundImage(UIImage(data: gContactsForListView[indexPath.item].contact.imageData!), for: UIControlState.normal)
+            cell.buttonContactImage.layer.cornerRadius = 30
+            cell.buttonContactImage.clipsToBounds = true
+            cell.buttonContactImage.setBackgroundImage(UIImage(data: gContactsForListView[indexPath.item].contact.imageData!), for: UIControlState.normal)
         } else {
             var contactText = ""
             
@@ -115,14 +115,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 contactText += String(gContactsForListView[indexPath.item].contact.givenName.first!)
             }
 
-            cell.buttonContactImage?.setBackgroundImage(UIImage.circle(diameter: 60, color: UIColor.lightGray, text: contactText as NSString), for: UIControlState.normal)
+            cell.buttonContactImage.setBackgroundImage(UIImage.circle(diameter: 60, color: UIColor.lightGray, text: contactText as NSString), for: UIControlState.normal)
         }
         
         cell.setRating(gContactsForListView[indexPath.row].rating)
         
-        cell.labelContatType?.layer.cornerRadius = 12
-        cell.labelContatType?.clipsToBounds = true
-        cell.labelContatType?.text = gPickerTypeData[gContactsForListView[indexPath.row].relationType]
+        cell.labelContatType.layer.cornerRadius = 12
+        cell.labelContatType.clipsToBounds = true
+        cell.labelContatType.text = gPickerTypeData[gContactsForListView[indexPath.row].relationType]
         
         return cell
     }
@@ -138,34 +138,21 @@ class ContactsTableViewCell : UITableViewCell {
     @IBOutlet weak var buttonRating3: UIButton!
     @IBOutlet weak var buttonRating4: UIButton!
     @IBOutlet weak var labelContatType: UILabel!
-
-/*    @IBAction func Rating1TouchDown(_ sender: UIButton) {
-        SetRating(1)
-    }
+    @IBOutlet weak var buttonPhoneCall: UIButton!
+    @IBOutlet weak var buttonSMS: UIButton!
+    @IBOutlet weak var buttonEmail: UIButton!
+    @IBOutlet weak var buttonWhatsApp: UIButton!
     
-    @IBAction func Rating2TouchDown(_ sender: UIButton) {
-        SetRating(2)
-    }
-    
-    @IBAction func Rating3TouchDown(_ sender: UIButton) {
-        SetRating(3)
-    }
-    
-    @IBAction func Rating4TouchDown(_ sender: UIButton) {
-        SetRating(4)
-    }*/
-
     func setRating(_ rating: Int) {
-        buttonRating1.setBackgroundImage(rating > 0 ? #imageLiteral(resourceName: "rating_on") : #imageLiteral(resourceName: "rating_off"), for: UIControlState.normal)
-        buttonRating2.setBackgroundImage(rating > 1 ? #imageLiteral(resourceName: "rating_on") : #imageLiteral(resourceName: "rating_off"), for: UIControlState.normal)
-        buttonRating3.setBackgroundImage(rating > 2 ? #imageLiteral(resourceName: "rating_on") : #imageLiteral(resourceName: "rating_off"), for: UIControlState.normal)
-        buttonRating4.setBackgroundImage(rating > 3 ? #imageLiteral(resourceName: "rating_on") : #imageLiteral(resourceName: "rating_off"), for: UIControlState.normal)
+        buttonRating1.setImage(rating > 0 ? #imageLiteral(resourceName: "rating_on") : #imageLiteral(resourceName: "rating_off"), for: UIControlState.normal)
+        buttonRating2.setImage(rating > 1 ? #imageLiteral(resourceName: "rating_on") : #imageLiteral(resourceName: "rating_off"), for: UIControlState.normal)
+        buttonRating3.setImage(rating > 2 ? #imageLiteral(resourceName: "rating_on") : #imageLiteral(resourceName: "rating_off"), for: UIControlState.normal)
+        buttonRating4.setImage(rating > 3 ? #imageLiteral(resourceName: "rating_on") : #imageLiteral(resourceName: "rating_off"), for: UIControlState.normal)
     }
 
     @IBAction func buttonContactImageTouchDown(_ sender: UIButton) {
         gContact = Contact
     }
-    
     
 }
 

@@ -100,6 +100,38 @@ class DetailViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         for emailAdress in contact.contact.emailAddresses {
             gPickerEmailsData.append(emailAdress.value.description)
         }
+        
+        if (!contact.defaultPhone.isEmpty || contact.contact.phoneNumbers.count == 1) {
+            buttonPhoneCall.setImage(#imageLiteral(resourceName: "phone_call_ok"), for: UIControlState.normal)
+        } else if (contact.contact.phoneNumbers.count == 0) {
+            buttonPhoneCall.setImage(#imageLiteral(resourceName: "phone_call_notPresent"), for: UIControlState.normal)
+        } else {
+            buttonPhoneCall.setImage(#imageLiteral(resourceName: "phone_call_notDefault"), for: UIControlState.normal)
+        }
+        
+        if (!contact.defaultSMS.isEmpty || contact.contact.phoneNumbers.count == 1) {
+            buttonSMS.setImage(#imageLiteral(resourceName: "send_sms_ok"), for: UIControlState.normal)
+        } else if (contact.contact.phoneNumbers.count == 0) {
+            buttonSMS.setImage(#imageLiteral(resourceName: "send_sms_notPresent"), for: UIControlState.normal)
+        } else {
+            buttonSMS.setImage(#imageLiteral(resourceName: "send_sms_notDefault"), for: UIControlState.normal)
+        }
+        
+        if (!contact.defaultWhatsApp.isEmpty || contact.contact.phoneNumbers.count == 1) {
+            buttonWhatsApp.setImage(#imageLiteral(resourceName: "send_whatsapp_ok"), for: UIControlState.normal)
+        } else if (contact.contact.phoneNumbers.count == 0) {
+            buttonWhatsApp.setImage(#imageLiteral(resourceName: "send_whatsapp_notPresent"), for: UIControlState.normal)
+        } else {
+            buttonWhatsApp.setImage(#imageLiteral(resourceName: "send_whatsapp_notDefault"), for: UIControlState.normal)
+        }
+        
+        if (!contact.defaultEmail.isEmpty || contact.contact.emailAddresses.count == 1) {
+            buttonEmail.setImage(#imageLiteral(resourceName: "send_email_ok"), for: UIControlState.normal)
+        } else if (contact.contact.emailAddresses.count == 0) {
+            buttonEmail.setImage(#imageLiteral(resourceName: "send_email_notPresent"), for: UIControlState.normal)
+        } else {
+            buttonEmail.setImage(#imageLiteral(resourceName: "send_Email_notDefault"), for: UIControlState.normal)
+        }
     }
 
     @IBAction func Rating1ButtonTouchDown(_ sender: UIButton) {
@@ -121,10 +153,10 @@ class DetailViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     }
     
     func SetRating(_ rating: Int) {
-        buttonRating1.setBackgroundImage(rating > 0 ? #imageLiteral(resourceName: "rating_on") : #imageLiteral(resourceName: "rating_off"), for: UIControlState.normal)
-        buttonRating2.setBackgroundImage(rating > 1 ? #imageLiteral(resourceName: "rating_on") : #imageLiteral(resourceName: "rating_off"), for: UIControlState.normal)
-        buttonRating3.setBackgroundImage(rating > 2 ? #imageLiteral(resourceName: "rating_on") : #imageLiteral(resourceName: "rating_off"), for: UIControlState.normal)
-        buttonRating4.setBackgroundImage(rating > 3 ? #imageLiteral(resourceName: "rating_on") : #imageLiteral(resourceName: "rating_off"), for: UIControlState.normal)
+        buttonRating1.setImage(rating > 0 ? #imageLiteral(resourceName: "rating_on") : #imageLiteral(resourceName: "rating_off"), for: UIControlState.normal)
+        buttonRating2.setImage(rating > 1 ? #imageLiteral(resourceName: "rating_on") : #imageLiteral(resourceName: "rating_off"), for: UIControlState.normal)
+        buttonRating3.setImage(rating > 2 ? #imageLiteral(resourceName: "rating_on") : #imageLiteral(resourceName: "rating_off"), for: UIControlState.normal)
+        buttonRating4.setImage(rating > 3 ? #imageLiteral(resourceName: "rating_on") : #imageLiteral(resourceName: "rating_off"), for: UIControlState.normal)
         
         updateRating(contact.contact.identifier, rating)
         contact.rating = rating
@@ -132,10 +164,10 @@ class DetailViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     func ResetRating(_ rating: Int) {
         let rating = 0
-        buttonRating1.setBackgroundImage(#imageLiteral(resourceName: "rating_off"), for: UIControlState.normal)
-        buttonRating2.setBackgroundImage(#imageLiteral(resourceName: "rating_off"), for: UIControlState.normal)
-        buttonRating3.setBackgroundImage(#imageLiteral(resourceName: "rating_off"), for: UIControlState.normal)
-        buttonRating4.setBackgroundImage(#imageLiteral(resourceName: "rating_off"), for: UIControlState.normal)
+        buttonRating1.setImage(#imageLiteral(resourceName: "rating_off"), for: UIControlState.normal)
+        buttonRating2.setImage(#imageLiteral(resourceName: "rating_off"), for: UIControlState.normal)
+        buttonRating3.setImage(#imageLiteral(resourceName: "rating_off"), for: UIControlState.normal)
+        buttonRating4.setImage(#imageLiteral(resourceName: "rating_off"), for: UIControlState.normal)
         
         updateRating(contact.contact.identifier, rating)
         contact.rating = rating
@@ -229,8 +261,8 @@ class DetailViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             if (contact.contact.phoneNumbers.count == 1) {
                 phoneNumber = contact.contact.phoneNumbers[0].value.stringValue
                 phoneNumber.sendWhatsApp()
-            } else if (!contact.defaultPhone.isEmpty) {
-                contact.defaultPhone.sendWhatsApp()
+            } else if (!contact.defaultWhatsApp.isEmpty) {
+                contact.defaultWhatsApp.sendWhatsApp()
             } else {
                 phoneSMSOrWhatsApp = 2
                 
@@ -388,14 +420,20 @@ class DetailViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
                 updateDefaultPhoneNumber(self.contact.contact.identifier, gPickerPhoneNumbersData[self.pickerPhoneNumbers.selectedRow(inComponent: 0)].description)
                 
                 self.contact.defaultPhone = gPickerPhoneNumbersData[self.pickerPhoneNumbers.selectedRow(inComponent: 0)].description
+                
+                self.buttonPhoneCall.setImage(#imageLiteral(resourceName: "phone_call_ok"), for: UIControlState.normal)
             case 1:
                 updateDefaultSMSNumber(self.contact.contact.identifier, gPickerPhoneNumbersData[self.pickerPhoneNumbers.selectedRow(inComponent: 0)].description)
                 
                 self.contact.defaultSMS = gPickerPhoneNumbersData[self.pickerPhoneNumbers.selectedRow(inComponent: 0)].description
+                
+                self.buttonSMS.setImage(#imageLiteral(resourceName: "send_sms_ok"), for: UIControlState.normal)
             case 2:
                 updateDefaultWhatsAppNumber(self.contact.contact.identifier, gPickerPhoneNumbersData[self.pickerPhoneNumbers.selectedRow(inComponent: 0)].description)
                 
                 self.contact.defaultWhatsApp = gPickerPhoneNumbersData[self.pickerPhoneNumbers.selectedRow(inComponent: 0)].description
+                
+                self.buttonWhatsApp.setImage(#imageLiteral(resourceName: "send_whatsapp_ok"), for: UIControlState.normal)
             default: break
             }
             self.alertViewPhoneSMSOrWhatsApp(alertView: alert)
@@ -434,6 +472,8 @@ class DetailViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             updateDefaultEmail(self.contact.contact.identifier, gPickerEmailsData[self.pickerEmails.selectedRow(inComponent: 0)].description)
             self.contact.defaultEmail = gPickerEmailsData[self.pickerEmails.selectedRow(inComponent: 0)].description
             self.sendEmail(emailParameter: getDefaultEmail(self.contact.contact.identifier))
+            
+            self.buttonEmail.setImage(#imageLiteral(resourceName: "send_email_ok"), for: UIControlState.normal)
         })
         
         let noAction = UIAlertAction(title: "No", style: .cancel, handler: { (action) -> Void in
