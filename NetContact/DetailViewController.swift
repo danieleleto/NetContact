@@ -281,6 +281,7 @@ class DetailViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             
             if (contact.contact.emailAddresses.count == 1) {
                 email = contact.contact.emailAddresses[0].value.description
+                contact.defaultEmail.append(email)
                 sendEmail(emailParameter: email)
             } else if (!contact.defaultEmail.isEmpty) {
                 sendEmail(emailParameter: contact.defaultEmail)
@@ -403,6 +404,7 @@ class DetailViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         let noAction = UIAlertAction(title: "No", style: .cancel, handler: { (action) -> Void in
             self.alertViewPhoneSMSOrWhatsApp(alertView: alert)
         })
+        
         alert.addAction(yesAction)
         alert.addAction(noAction)
         
@@ -430,11 +432,12 @@ class DetailViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         // add the actions (buttons)
         let yesAction = UIAlertAction(title: "Si", style: .default, handler: { (action) -> Void in
             updateDefaultEmail(self.contact.contact.identifier, gPickerEmailsData[self.pickerEmails.selectedRow(inComponent: 0)].description)
-            self.alertViewEmails(alertView: alert)
+            self.contact.defaultEmail = gPickerEmailsData[self.pickerEmails.selectedRow(inComponent: 0)].description
+            self.sendEmail(emailParameter: getDefaultEmail(self.contact.contact.identifier))
         })
         
         let noAction = UIAlertAction(title: "No", style: .cancel, handler: { (action) -> Void in
-            self.alertViewEmails(alertView: alert)
+            self.sendEmail(emailParameter : gPickerEmailsData[self.pickerEmails.selectedRow(inComponent: 0)].description)
         })
         alert.addAction(yesAction)
         alert.addAction(noAction)
@@ -442,10 +445,6 @@ class DetailViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         // show the alert
         self.present(alert, animated: true, completion: nil)
         viewPickerEmails.isHidden = true
-    }
-    
-    func alertViewEmails(alertView: UIAlertController!){
-        sendEmail(emailParameter: getDefaultEmail(self.contact.contact.identifier))
     }
     
     @IBAction func buttonPickerTypeCancel(_ sender: UIBarButtonItem) {
@@ -459,4 +458,5 @@ class DetailViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     @IBAction func buttonPickerEmailsCancel(_ sender: UIBarButtonItem) {
         viewPickerEmails.isHidden = true
     }
+    
 }
