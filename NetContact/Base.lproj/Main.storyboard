@@ -54,27 +54,30 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5P-oX-f6O" userLabel="ButtonPhoneCall">
                                                     <rect key="frame" x="282" y="8" width="35" height="35"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button" image="phone_call_ok"/>
+                                                    <state key="normal" image="phone_call_ok"/>
+                                                    <connections>
+                                                        <action selector="buttonPhoneCallTouchDown:" destination="vQe-Zy-Sl6" eventType="touchDown" id="1ZA-L2-Ulm"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2m1-5m-RF5">
                                                     <rect key="frame" x="78" y="39" width="25" height="25"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button" image="rating_off"/>
+                                                    <state key="normal" image="rating_off"/>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLL-k5-VFL">
                                                     <rect key="frame" x="111" y="39" width="25" height="25"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button" image="rating_off"/>
+                                                    <state key="normal" image="rating_off"/>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="StM-cY-2Y3">
                                                     <rect key="frame" x="144" y="39" width="25" height="25"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button" image="rating_off"/>
+                                                    <state key="normal" image="rating_off"/>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvJ-Kl-Xtm">
                                                     <rect key="frame" x="174" y="39" width="25" height="25"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button" image="rating_off"/>
+                                                    <state key="normal" image="rating_off"/>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHe-c4-xho">
                                                     <rect key="frame" x="10" y="10" width="60" height="60"/>
@@ -87,21 +90,30 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jos-0v-1Kz" userLabel="ButtonSMS">
                                                     <rect key="frame" x="282" y="52" width="35" height="35"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button" image="send_sms_ok"/>
+                                                    <state key="normal" image="send_sms_ok"/>
+                                                    <connections>
+                                                        <action selector="buttonSMSTouchDown:" destination="vQe-Zy-Sl6" eventType="touchDown" id="h6o-ne-mh7"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWy-xb-OIp" userLabel="ButtonWhatsapp">
                                                     <rect key="frame" x="325" y="52" width="35" height="35"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button" image="send_whatsapp_ok"/>
+                                                    <state key="normal" image="send_whatsapp_ok"/>
+                                                    <connections>
+                                                        <action selector="buttonWhatsAppTouchDown:" destination="vQe-Zy-Sl6" eventType="touchDown" id="r5n-UH-KBM"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04Z-FH-AGS" userLabel="ButtonEmail">
                                                     <rect key="frame" x="325" y="8" width="35" height="35"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button" image="send_email_ok"/>
+                                                    <state key="normal" image="send_email_ok"/>
+                                                    <connections>
+                                                        <action selector="buttonEmailTouchDown:" destination="vQe-Zy-Sl6" eventType="touchDown" id="zMR-xj-aQK"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7yL-Ah-MIZ">
                                                     <rect key="frame" x="78" y="70" width="196" height="24"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                                     <nil key="textColor"/>
@@ -113,10 +125,14 @@
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                         <connections>
                                             <outlet property="buttonContactImage" destination="fHe-c4-xho" id="YZP-lE-rIo"/>
+                                            <outlet property="buttonEmail" destination="04Z-FH-AGS" id="WN8-8R-5ah"/>
+                                            <outlet property="buttonPhoneCall" destination="z5P-oX-f6O" id="Trx-0t-ugH"/>
                                             <outlet property="buttonRating1" destination="2m1-5m-RF5" id="Dfh-he-dJh"/>
                                             <outlet property="buttonRating2" destination="CLL-k5-VFL" id="ieh-P9-Uis"/>
                                             <outlet property="buttonRating3" destination="StM-cY-2Y3" id="n1b-Yi-mRt"/>
                                             <outlet property="buttonRating4" destination="YvJ-Kl-Xtm" id="t5U-1i-WLW"/>
+                                            <outlet property="buttonSMS" destination="jos-0v-1Kz" id="XlT-mM-7Ss"/>
+                                            <outlet property="buttonWhatsApp" destination="aWy-xb-OIp" id="sF7-5V-pqb"/>
                                             <outlet property="labelContatType" destination="7yL-Ah-MIZ" id="YJy-dg-aRu"/>
                                             <outlet property="labelName" destination="Egy-Yx-mxz" id="EMP-RU-7mb"/>
                                         </connections>
